@@ -1,0 +1,155 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 60% 95%;
+    --foreground: 276 73% 26%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 276 73% 26%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 276 73% 26%;
+
+    --primary: 276 73% 32%;
+    --primary-foreground: 260 60% 95%;
+
+    --secondary: 260 59% 70%;
+    --secondary-foreground: 260 60% 95%;
+
+    --muted: 260 60% 90%;
+    --muted-foreground: 260 30% 46%;
+
+    --accent: 260 59% 70%;
+    --accent-foreground: 276 73% 26%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 260 60% 95%;
+
+    --border: 260 30% 86%;
+    --input: 260 30% 86%;
+    --ring: 276 73% 32%;
+
+    --radius: 0.75rem;
+
+    --success: 142.1 76.2% 36.3%;
+    --success-foreground: 260 60% 95%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 260 60% 95%;
+
+    --expense: 0 84.2% 60.2%;
+    --expense-foreground: 260 60% 95%;
+
+    --income: 142.1 76.2% 36.3%;
+    --income-foreground: 260 60% 95%;
+
+    --sidebar-background: 260 60% 95%;
+    --sidebar-foreground: 276 73% 26%;
+    --sidebar-primary: 276 73% 32%;
+    --sidebar-primary-foreground: 260 60% 95%;
+    --sidebar-accent: 260 59% 70%;
+    --sidebar-accent-foreground: 276 73% 26%;
+    --sidebar-border: 260 30% 80%;
+    --sidebar-ring: 276 73% 32%;
+  }
+
+  .dark {
+    --background: 276 73% 10%;
+    --foreground: 260 60% 95%;
+
+    --card: 276 73% 12%;
+    --card-foreground: 260 60% 95%;
+
+    --popover: 276 73% 12%;
+    --popover-foreground: 260 60% 95%;
+
+    --primary: 260 59% 70%;
+    --primary-foreground: 276 73% 26%;
+
+    --secondary: 276 73% 32%;
+    --secondary-foreground: 260 60% 95%;
+
+    --muted: 276 33% 20%;
+    --muted-foreground: 260 30% 70%;
+
+    --accent: 276 33% 20%;
+    --accent-foreground: 260 60% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 260 60% 95%;
+
+    --border: 276 33% 20%;
+    --input: 276 33% 20%;
+    --ring: 260 30% 80%;
+
+    --success: 142.1 70.6% 45.3%;
+    --success-foreground: 144.9 80.4% 10%;
+
+    --warning: 47.9 95.8% 53.1%;
+    --warning-foreground: 26 83.3% 14.1%;
+
+    --expense: 0 62.8% 50.6%;
+    --expense-foreground: 260 60% 95%;
+
+    --income: 142.1 70.6% 45.3%;
+    --income-foreground: 260 60% 95%;
+
+    --sidebar-background: 276 73% 16%;
+    --sidebar-foreground: 260 60% 95%;
+    --sidebar-primary: 260 59% 70%;
+    --sidebar-primary-foreground: 276 73% 26%;
+    --sidebar-accent: 276 33% 25%;
+    --sidebar-accent-foreground: 260 60% 95%;
+    --sidebar-border: 276 33% 25%;
+    --sidebar-ring: 260 59% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-sm border border-white/20 dark:bg-black/20 dark:border-white/10;
+  }
+}
+
+@layer components {
+  .expense-amount {
+    @apply text-expense font-semibold;
+  }
+  
+  .income-amount {
+    @apply text-income font-semibold;
+  }
+
+  .transaction-item {
+    @apply p-4 border rounded-md flex justify-between items-center mb-2 hover:bg-accent/50 transition-colors;
+  }
+
+  .dashboard-card {
+    @apply p-6 rounded-xl bg-card shadow-sm border;
+  }
+
+  .stat-card {
+    @apply p-4 rounded-lg border flex flex-col;
+  }
+
+  .stat-value {
+    @apply text-2xl font-bold;
+  }
+
+  .stat-label {
+    @apply text-sm text-muted-foreground;
+  }
+}
